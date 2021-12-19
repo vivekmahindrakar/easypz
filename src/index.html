@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="/js/main.js"></script>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Moon+Dance&family=Satisfy&display=swap" rel="stylesheet"></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(function()
+{
+  $(window).on("scroll",function()
+  {
+    if($(window).scrollTop()>200)
+    {
+      $(".head").addClass("active-link");
+      $(".logo").addClass("active-link")
+      $(".navigs").addClass("active-link")
+      $(".link").addClass("active-link")
+
+    }
+    else{
+      $(".head").removeClass("active-link");
+      $(".logo").removeClass("active-link")
+      $(".navigs").removeClass("active-link")
+      $(".link").removeClass("active-link")
+    }
+  })
+});
+    </script>
+
+    <body> 
+   <div class="main-page">
+       <header class="head">
+            <h1 class="logo">EasyPz</h1>
+
+            <form action="/admin" method="post">
+                <ul class="navigs">
+                    <li> <a href="#options" class="link">Electronics</a></li>
+                    <li> <a href="#options" class="link">Clothing</a> </li>
+                    <li> <a href="#options" class="link">Home Products</a> </li>
+                    <li> <a href="/admin" class="link">Admin</a></li>
+                </ul>
+            </form>
+
+       </header>
+       
+       
+       <div class="content">
+        <strong>Find the perfect <span>Product</span><br> from tonnes</strong> 
+        <br>
+        
+        <input type="text" name="serach" id="search" placeholder="Search does not work ..."> 
+        <input type="submit" name="serach-btn" id="search-btn" value="Search">
+       </div>
+
+
+
+   </div>
+   <div class="card-options" id="options">
+
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle"> <br>
+        <form action="/product" method="post">
+            <div id="pName" > <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+                <input type="hidden" name="pName" value="1">
+                <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+            </form> 
+    </div>
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle">
+        <form action="/product" method="post">
+            <div id="pName" name="pName"> <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+            <input type="hidden" name="pName" value="2">    
+            <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+            </form> 
+    </div>
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle">
+        <form action="/product" method="post">
+            <div id="pName" name="pName"> <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+            <input type="hidden" name="pName" value="3">    
+            <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+            </form> 
+    </div>
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle">
+        <form action="/product" method="post">
+        <div id="pName" name="pName"> <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+        <input type="hidden" name="pName" value="4">    
+        <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+        </form> 
+    </div>
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle">
+        <form action="/product" method="post">
+            <div id="pName" name="pName"> <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+            <input type="hidden" name="pName" value="5">    
+            <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+            </form> 
+    </div>
+    <div class="card">
+        <img src="/images/mobile.jpeg" alt="bottle">
+        <form action="/product" method="post">
+            <div id="pName" name="pName"> <strong>Product Name </strong> <p>rating: 5 ★★★★★</p> </div>
+            <input type="hidden" name="pName" value="6">    
+            <button type="submit" class="buy-now"><strong>Buy Now </strong></button>
+            </form> 
+    </div>
+   </div>
+</body>
+</html>

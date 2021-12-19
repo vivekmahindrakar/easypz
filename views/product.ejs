@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/js/main.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Moon+Dance&family=Satisfy&display=swap" rel="stylesheet"></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function()
+        {
+          $(window).on("scroll",function()
+          {
+            if($(window).scrollTop()>200)
+            {
+              $(".head").addClass("active-link");
+              $(".logo").addClass("active-link")
+              $(".navigs").addClass("active-link")
+              $(".link").addClass("active-link")
+        
+            }
+            else{
+              $(".head").removeClass("active-link");
+              $(".logo").removeClass("active-link")
+              $(".navigs").removeClass("active-link")
+              $(".link").removeClass("active-link")
+            }
+          })
+        });
+            </script>
+</head>
+<body>
+    <header class="head">
+        <h1 class="logo">EasyPz</h1>
+
+        <form action="/admin" method="post">
+            <ul class="navigs">
+                <li> <a href="/#options" class="link">Electronics</a></li>
+                <li> <a href="/#options" class="link">Clothing</a> </li>
+                <li> <a href="/#options" class="link">Home Products</a> </li>
+                <li> <a href="/admin" class="link">Admin</a></li>
+            </ul>
+        </form>
+
+   </header>
+   <!-- product -->
+   <div class="main-product">
+       <div class="product-img">
+           <img src="/images/mobile.jpeg" alt="mobile">
+           <div id="info">
+                <h2><%= product.p_name%></h2> <br>
+                <%= product.p_rate %>    
+           </div>
+           <br>
+           <form action="/buyed" method="post">
+               <button type="submit" onclick="alert('Product purchased successfully')">Buy Now</button>
+               <input type="hidden" name="name" value="<%= product.p_name %> ">
+               <input type="hidden" name="id" value="<%= product.p_id %> ">
+               
+            </form>
+           
+       </div>
+       <div class="product-desc">
+        <h1>Product Description</h1>
+        <br><br><br>
+        <h4>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+        </h4>
+        
+       </div>
+       
+   </div>
+   
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/js/main.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Moon+Dance&family=Satisfy&display=swap" rel="stylesheet"></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>EasyPz</title>
+    <script>
+        $(function()
+        {
+          $(window).on("scroll",function()
+          {
+            if($(window).scrollTop()>200)
+            {
+              $(".head").addClass("active-link");
+              $(".logo").addClass("active-link")
+              $(".navigs").addClass("active-link")
+              $(".link").addClass("active-link")
+        
+            }
+            else{
+              $(".head").removeClass("active-link");
+              $(".logo").removeClass("active-link")
+              $(".navigs").removeClass("active-link")
+              $(".link").removeClass("active-link")
+            }
+          })
+        });
+            </script>
+</head>
+<body>
+    <header class="head">
+        <h1 class="logo">EasyPz</h1>
+
+        <form action="/admin" method="post">
+            <ul class="navigs">
+                <li> <a href="/#options" class="link">Electronics</a></li>
+                <li> <a href="/#options" class="link">Clothing</a> </li>
+                <li> <a href="/#options" class="link">Home Products</a> </li>
+                <li> <a href="/admin" class="link">Admin</a></li>
+            </ul>
+        </form>
+
+   </header>
+
+   <div class="banner-head"><h1>Transactions done </h1></div>
+   <br>
+   <% if (products!=null) { %>
+       <table class="table">
+       
+           <tr>
+               <th>id</th>
+               <th>Name</th>
+               <th>transaction</th>
+               <th>timestamp</th>
+           </tr>
+           <% products.forEach(products=> { %>
+            <tr>
+                <td> <%=products.p_id%> </td>
+               <td> <%=products.p_name%> </td>
+               <td> <%=products.p_transaction%> </td>
+               <td> <%=products.p_timestamp%> </td>
+           </tr>
+            <% }); %>
+           
+           
+       </table>
+   <% } else { %>
+       <h3 class="noUser">No products found</h3>
+       <% } %> 
+
+
+       
+</body>
+
+</html>
